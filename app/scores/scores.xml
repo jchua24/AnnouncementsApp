@@ -1,0 +1,58 @@
+<!--
+The markup in NativeScript apps contains a series of user interface components, each
+of which NativeScript renders with a platform-specific iOS or Android native control.
+You can find a full list of user interface components you can use in your app at
+https://docs.nativescript.org/ui/components.
+-->
+<Page navigatingTo="onNavigatingTo" class="page"
+    xmlns:lv="nativescript-telerik-ui/listview"
+    xmlns="http://schemas.nativescript.org/tns.xsd"  xmlns:PullRefresh="nativescript-pulltorefresh">
+
+    <ActionBar text="Go Back" title="TSS Announcements">
+ 
+		<NavigationButton tap="onGoBack" android.systemIcon="ic_menu_back"/>
+    
+        <ActionItem tap="onShare"
+            ios.systemIcon="9" ios.position="right"
+            android.systemIcon="ic_menu_share" android.position="actionBar"/>
+
+        <ActionItem tap="getScores" ios.systemIcon="16" ios.position="right"
+            text="Spirit Week" android.position="popup"/>    
+            
+    </ActionBar>
+
+
+    <GridLayout class="page" rows="auto, *, *, auto, *" columns="*, *">
+
+		<Label row="0" colSpan="2" text="SPIRIT WEEK"  class="score-title" horizontalAlignment="center"/>
+
+		<StackLayout row="1" col="0" verticalAlignment="center" class="grade-score">
+			<Label id="grade9Score" text="{{grade9Score}}"  class="score-digit"  horizontalAlignment="center"/>
+			<Label text="GRADE 9"  class="grade-label" horizontalAlignment="center"/>
+		</StackLayout>
+
+		<StackLayout row="1" col="1" verticalAlignment="center" class="grade-score">
+			<Label id="grade10Score" text="{{grade10Score}}"  class="score-digit"  horizontalAlignment="center"/>
+			<Label text="GRADE 10"  class="grade-label"  horizontalAlignment="center"/>
+		</StackLayout>
+
+		<StackLayout row="2" col="0" verticalAlignment="center" class="grade-score">
+			<Label id="grade11Score" text="{{grade11Score}}"  class="score-digit"  horizontalAlignment="center"/>
+			<Label text="GRADE 11"  class="grade-label"  horizontalAlignment="center"/>
+		</StackLayout>
+
+		<StackLayout row="2" col="1" verticalAlignment="center" class="grade-score">
+			<Label id="grade12Score" text="{{grade12Score}}"  class="score-digit"  horizontalAlignment="center"/>
+			<Label text="GRADE 12"  class="grade-label"  horizontalAlignment="center"/>
+		</StackLayout>
+
+		<StackLayout row="3" colSpan="2" verticalAlignment="center"  horizontalAlignment="center">
+			<Button text="Refresh" tap="buttonTap" class="btn btn-primary"/>
+		</StackLayout>
+
+		<StackLayout row="4" colSpan="2" verticalAlignment="center" minHeight="20">
+		</StackLayout>
+
+    </GridLayout>
+	
+</Page>

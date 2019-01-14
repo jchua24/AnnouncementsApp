@@ -1,0 +1,97 @@
+﻿/*
+Importing application-wide themes and also platform-specific styling 
+
+For a full list of class names in the theme
+refer to http://docs.nativescript.org/ui/theme.
+*/
+@import '~/nativescript-theme-core/css/core.light.css';
+@import url('~/platform.css'); 
+
+
+#webviewLayout {
+    width: 90%;
+    height: 90%; 
+} 
+
+
+ActionBar {
+    background-color:  #303030;
+    color: #FFD700; 
+}
+
+Button {
+    font-size: 18;
+    color: 	#FFD700; 
+    background-color: #303030;
+}
+
+.htmlPage {
+    background-color: white; 
+}
+
+.page {
+    font-size: 17;
+    background-color: #e7e7e7
+}
+
+#loginImageBannerContainer {
+    margin: 20;
+}
+
+#loginControlsContainer {
+    margin-top: 100
+}
+
+#password {
+    margin-bottom: 10;
+}
+
+.sponsorImageLeft {
+    width: 80%;
+    height: 80%;
+    /*
+    margin-left: 120;
+    margin-right: 20;
+    */
+}
+
+.sponsorImageRight {
+    width: 80%;
+    height: 80%;
+    /*
+    margin-right: 120;
+    margin-left: 0;
+    */
+}
+
+.announcement-date-first-letter {
+    width: 300px;
+    height: 300px;
+}
+
+.announcement-date {
+    margin-left: 20px;
+    font-weight: bold;     
+}
+
+.score-title {
+    font-size: 30;
+    color: black;
+    font-weight: bold;     
+}
+
+.score-digit {
+    font-size: 42;
+    color: black;
+    font-weight: bold;     
+}
+
+.grade-label {
+    padding-top: 10;
+    font-weight: bold;     
+}
+
+.grade-score {
+    margin: 12;
+    background-color: #FFFFE0;
+}

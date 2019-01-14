@@ -1,0 +1,45 @@
+<!--
+The markup in NativeScript apps contains a series of user interface components, each
+of which NativeScript renders with a platform-specific iOS or Android native control.
+You can find a full list of user interface components you can use in your app at
+https://docs.nativescript.org/ui/components.
+-->
+<Page navigatingTo="onNavigatingTo" class="page"
+    xmlns:lv="nativescript-telerik-ui/listview"
+    xmlns="http://schemas.nativescript.org/tns.xsd"  xmlns:PullRefresh="nativescript-pulltorefresh">
+
+    <ActionBar title="TSS Announcements">
+ 
+        <NavigationButton visibility="collapsed"/>
+    
+        <ActionItem tap="onShare"
+            ios.systemIcon="9" ios.position="right"
+            android.systemIcon="ic_menu_share" android.position="actionBar"/>
+
+          <!-- navigation to spirit week page -->
+          <ActionItem tap="getScores" ios.systemIcon="16" ios.position="right"
+             text="Spirit Week" android.position="popup"/>    
+    </ActionBar>
+
+    <GridLayout class="page">
+        <lv:RadListView items="{{ announcements }}" itemTap="onAnnouncementItemTap" pullToRefresh="true" pullToRefreshInitiated="onPullToRefreshInitiated" selectionBehavior="Press">
+            <lv:RadListView.listViewLayout>
+                <lv:ListViewLinearLayout scrollDirection="Vertical"/>
+            </lv:RadListView.listViewLayout>
+
+            <lv:RadListView.itemTemplate>
+                <GridLayout class="list-group-item" rows="auto, auto" columns="auto, *">
+                    <Image row="0" col="0" src="{{image_url}}" class="announcement-date-first-letter" />
+                    <StackLayout row="0" col="1" verticalAlignment="center">
+                        <Label text="{{announcement_date}}" class="announcement-date" />
+                    </StackLayout>
+                    <!-- row divider -->
+                    <StackLayout row="1" height="1" backgroundColor="Gray" colSpan="2"/>
+                </GridLayout>
+            </lv:RadListView.itemTemplate>
+        </lv:RadListView>  
+
+        <ActivityIndicator busy="{{ isLoading }}"/>
+
+    </GridLayout>
+</Page>

@@ -1,0 +1,24 @@
+<Page class="page" loaded="loaded">
+
+	<GridLayout rows="auto, *, *" columns="*">
+
+		<StackLayout row="0" id="loginImageBannerContainer" orientation="vertical" horizontalAlignment="center">
+			<Image src="~/images/appname.png"/>  
+		</StackLayout>
+
+
+		<GridLayout row="1" id="loginControlsContainer" rows="auto, auto" columns="*" width="60%">
+        	<TextField id="password" hint="Password" secure="true" row="0"/>
+        	<Button text="Sign In" class="link" tap="signIn" row="1"/>
+        </GridLayout>
+
+
+        <GridLayout row="2" rows="auto, *" columns="*, *">
+             <Label text="Brought to you by" row="0" colSpan="2" horizontalAlignment="center"/>
+		     <Image class="sponsorImageLeft" src="~/images/TSS.png" col="0" row="1" stretch="aspectFill"/>
+             <Image class="sponsorImageRight" src="~/images/clublogo.png" col="1" row="1" stretch="aspectFill"/>            
+        </GridLayout>
+		
+    </GridLayout>
+
+</Page>

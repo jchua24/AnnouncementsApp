@@ -1,0 +1,31 @@
+<!--
+The markup in NativeScript apps contains a series of user interface components, each
+of which NativeScript renders with a platform-specific iOS or Android native control.
+You can find a full list of user interface components you can use in your app at
+https://docs.nativescript.org/ui/components.
+-->
+<Page navigatingTo="onNavigatingTo" class="page"
+    xmlns:lv="nativescript-telerik-ui/listview"
+    xmlns="http://schemas.nativescript.org/tns.xsd"  xmlns:PullRefresh="nativescript-pulltorefresh">
+
+    <ActionBar title="TSS Announcements"> </ActionBar>
+
+    <GridLayout class="page">
+            <lv:RadListView items="{{ cars }}" itemTap="onCarItemTap" pullToRefresh="true" pullToRefreshInitiated="onPullToRefreshInitiated">
+                <lv:RadListView.listViewLayout>
+                    <lv:ListViewLinearLayout scrollDirection="Vertical"/>
+                </lv:RadListView.listViewLayout>
+
+                <lv:RadListView.itemTemplate>
+                    <GridLayout columns="*, *, *" rows="*">
+                          
+                            <Image src="{{image_url}}" stretch="aspectFill" col="0" rowSpan="3"/>
+        
+                            <Label id="listLabel" text="{{ announcement_date }}" col="1" colSpan="2" row="0"/>
+                            
+                    </GridLayout>   
+                </lv:RadListView.itemTemplate>
+            </lv:RadListView>  
+        <ActivityIndicator busy="{{ isLoading }}"/>
+    </GridLayout>
+</Page>
